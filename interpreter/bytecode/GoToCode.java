@@ -1,6 +1,7 @@
-package bytecode;
+package interpreter.bytecode;
 
-// add import for vm
+import java.util.ArrayList;
+import interpreter.VirtualMachine;
 
 public class GoToCode extends ByteCode {
 	private String label;

@@ -1,4 +1,7 @@
-package bytecode;
+package interpreter.bytecode;
+
+import java.util.ArrayList;
+import interpreter.VirtualMachine;
 
 public class DumpCode extends ByteCode {
     private String dump;

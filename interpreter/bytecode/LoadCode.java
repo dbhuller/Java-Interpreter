@@ -1,4 +1,7 @@
-package bytecode;
+package interpreter.bytecode;
+
+import java.util.ArrayList;
+import interpreter.VirtualMachine;
 
 public class LoadCode extends ByteCode {
     private int offset;

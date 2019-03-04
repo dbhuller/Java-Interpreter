@@ -1,4 +1,8 @@
-package bytecode;
+package interpreter.bytecode;
+
+import interpreter.VirtualMachine;
+import java.util.ArrayList;
+
 
 public class ArgsCode extends ByteCode {
     private int val;
