@@ -71,6 +71,40 @@ public class RunTimeStack {
         return valStored;
     }
 
+    // load variables to runtime stack from offset witihn current frame
+    public int load(int offset) {
+        // go to offset of current frame
+        int valLoaded = runTimeStack.get(framePointer.peek() + offset);
+        // add valLoaded to runtimestack
+        runTimeStack.add(valLoaded);
+        return valLoaded;
+    }
+
+    // creates a new frame in the RunTimeStack class
+    public void newFrameAt(int offset) {
+        framePointer.push(runTimeStack.size()-offset);
+    }
+
+    public Integer push(Integer val) {
+        runTimeStack.add(val);
+        return runTimeStack.peek(); // try using 'this' if it doesnt work
+    }
+
+    public void popFrame() {
+        int pop1 = runTimeStack.peek();
+        int pop2 = framePointer.pop();
+        for(int i = runTimeStack.size() - 1; i >= pop2; i--) {
+            runTimeStack.remove(i);
+        }
+        runTimeStack.add(pop1);
+    }
+
+    public int size() {
+        return runTimeStack.size();
+    }
+
+
+
 
 
     
