@@ -6,14 +6,14 @@ import interpreter.bytecode.DumpCode;
 
 public class VirtualMachine {
 
-    private RunTimeStack runStack;
+    protected RunTimeStack runStack;
     private Stack returnAddrs;
     private Program program;
     private int pc;
     private boolean isRunning;
 
     //initial dump set to off (default)
-    private String dumpMode = "OFF";
+    private String dumpMode = "OFF"; // use true
 
     protected VirtualMachine(Program program) {
 
@@ -23,7 +23,7 @@ public class VirtualMachine {
 
     //method to execute program
     public void executeProgram() {
-        int x = 0;
+        pc = 0;
         runStack = new RunTimeStack();
         returnAddrs = new Stack<Integer>();
         isRunning = true;
@@ -34,8 +34,10 @@ public class VirtualMachine {
             if("ON".equals(dumpMode) && !(bytecode instanceof DumpCode)) {
                 runStack.dump();
             }
-            x++;
+            pc++;
         }
     }
+
+    public int
 
 }

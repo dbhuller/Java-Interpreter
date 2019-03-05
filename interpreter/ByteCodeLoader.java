@@ -28,6 +28,8 @@ public class ByteCodeLoader extends Object {
      *      the newly created ByteCode instance via the init function.
      */
     public Program loadCodes() {
-       return null;
+        Program p;
+
+        return p;
     }
 }
