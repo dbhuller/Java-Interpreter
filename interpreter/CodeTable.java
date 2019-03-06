@@ -31,6 +31,7 @@ public class CodeTable {
         codeTable.put("WRITE", "WriteCode");
         codeTable.put("LABEL", "LabelCode");
         codeTable.put("DUMP", "DumpCode");
+        //codeTable.put("BRANCH", "BranchCode");
     }
 
     /**

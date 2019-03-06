@@ -103,6 +103,20 @@ public class RunTimeStack {
         return runTimeStack.size();
     }
 
+    public int maxToPop() {
+        Iterator fpIterator = framePointer.iterator();
+        int nextFrame = 0;
+        int currentFrame = (Integer)fpIterator.next();
+        int size = 0;
+        if(currentFrame == 0)
+            size = 0;
+        else if(fpIterator.hasNext()) {
+            nextFrame = (Integer)fpIterator.next();
+            size = currentFrame - nextFrame;
+        }
+        return size;
+    }
+
 
 
 

@@ -1,15 +1,19 @@
 package interpreter;
 
+import java.util.HashMap;
 import java.util.ArrayList;
-import interpreter.bytecode.ByteCode;
+import interpreter.bytecode.*;
 
 public class Program {
 
     private ArrayList<ByteCode> program;
+    private HashMap<Stirng, Integer> programHM;
 
     public Program() {
         program = new ArrayList<>();
+        programHM = new HashMap<String, Integer>();
     }
+
 
     protected ByteCode getCode(int pc) {
         return this.program.get(pc);
@@ -18,6 +22,15 @@ public class Program {
     public int getSize() {
         return this.program.size();
     }
+
+    //function to identify if bytecode is LabelCode then store labelcode in hashmap
+    public void addCode(ByteCode code) {
+        if(code instanceof LabelCode) {
+            programHM.put(label.getArgs(). (program.size()));
+        }
+        program.add(code);
+    }
+
 
     /**
      * This function should go through the program and resolve all addresses.
@@ -28,7 +41,15 @@ public class Program {
      * @param program Program object that holds a list of ByteCodes
      */
     public void resolveAddrs() {
-
+        int addrToJumpTo;
+        int size= program.getSize();
+        for(int i = 0; i < size; i++) {
+            if(program.getCode(i) instanceof BranchCode) {
+                BranchCode branch = (BranchCode)program.getCode(i);
+                addrToJumpTo = (Integer)programHM.get(branch.getArgs()); //get matching addr
+                branch.setAddress(addrToJumpTo);
+            }
+        }
     }
 
 

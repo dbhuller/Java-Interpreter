@@ -4,12 +4,15 @@ package interpreter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import interpreter.bytecode.*;
 
 
 public class ByteCodeLoader extends Object {
 
     private BufferedReader byteSource;
-    
+    private Program program;
     /**
      * Constructor Simply creates a buffered reader.
      * YOU ARE NOT ALLOWED TO READ FILE CONTENTS HERE
@@ -17,6 +20,7 @@ public class ByteCodeLoader extends Object {
      */
     public ByteCodeLoader(String file) throws IOException {
         this.byteSource = new BufferedReader(new FileReader(file));
+        this.program = new Program();
     }
     /**
      * This function should read one line of source code at a time.
@@ -29,6 +33,41 @@ public class ByteCodeLoader extends Object {
      */
     public Program loadCodes() {
         Program p;
+        String key, value;
+        String nextLine;
+        ByteCode code;
+        ArrayList<String> tokens = new ArrayList<String>();
+        try {
+            nextLine = byteSource.readLine();
+            while(nextLine != null) {
+                StringTokenizer tokenizer = new StringTokenizer(nextLine);
+                key = tokenizer.nextToken();
+                value = CodeTable.getClassName(key);
+
+                code = (ByteCode)(Class.forName("interpreter.bytecode." + value).newInstance());
+
+                while(tokenizer.hasMoreTokens()) {
+                    tokens.add(tokenizer.nextToken());
+                }
+                //initialize bytecode instance with args
+                code.init(tokens);
+                //add bytecode to programs arraylist
+                p.addCode(code);
+
+                //clear tokens
+                tokens.clear();
+                //reads next line
+                nextLine = byteSource.readLine();
+            }
+        } catch (Exception e) {
+            System.out.println("file readline doesnt work");
+        }
+        //resolve branching
+        try {
+            program.resolveAddrs(p);
+        } catch (Exception e) +{
+            SYstem.out.println("ResolveAddress error in bytecodeloader.java");
+        }
 
         return p;
     }
