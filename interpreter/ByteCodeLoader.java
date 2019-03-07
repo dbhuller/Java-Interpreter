@@ -12,7 +12,7 @@ import interpreter.bytecode.*;
 public class ByteCodeLoader extends Object {
 
     private BufferedReader byteSource;
-    private Program program;
+    //
     /**
      * Constructor Simply creates a buffered reader.
      * YOU ARE NOT ALLOWED TO READ FILE CONTENTS HERE
@@ -20,7 +20,7 @@ public class ByteCodeLoader extends Object {
      */
     public ByteCodeLoader(String file) throws IOException {
         this.byteSource = new BufferedReader(new FileReader(file));
-        this.program = new Program();
+        //this.program = new Program();
     }
     /**
      * This function should read one line of source code at a time.
@@ -38,6 +38,7 @@ public class ByteCodeLoader extends Object {
         ByteCode code;
         ArrayList<String> tokens = new ArrayList<String>();
         try {
+            //read line of the file
             nextLine = byteSource.readLine();
             while(nextLine != null) {
                 StringTokenizer tokenizer = new StringTokenizer(nextLine);
@@ -64,7 +65,7 @@ public class ByteCodeLoader extends Object {
         }
         //resolve branching
         try {
-            program.resolveAddrs(p);
+            p.resolveAddrs(p);
         } catch (Exception e) {
             System.out.println("ResolveAddress error in bytecodeloader.java");
         }
