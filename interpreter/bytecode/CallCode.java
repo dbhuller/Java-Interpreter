@@ -9,12 +9,13 @@ public class CallCode extends BranchCode {
 
     @Override
     public void init(ArrayList<String> args) {
-        label = (String)args.get(0);
+        label = args.get(0);
     }
 
     @Override
     public void execute(VirtualMachine vm) {
-    // add code
+        vm.pushReturnAddrs(vm.getProgramCounter());
+        vm.setProgramCounter(address);
     }
 
     public String getLabel() {
@@ -22,11 +23,11 @@ public class CallCode extends BranchCode {
     }
 
     public int getAddr() {
-        return targetAddress;
+        return address;
     }
 
-    public void setAddr(int addr) {
-        address = addr;
+    public void setAddr(int addrToBeSet) {
+        address = addrToBeSet;
     }
 
     public String toString() {

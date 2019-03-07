@@ -11,7 +11,7 @@ public class LabelCode extends ByteCode {
     }
 
     public void execute(VirtualMachine vm) {
-
+    //DOES NOTHING
     }
 
     public String getArgs() {

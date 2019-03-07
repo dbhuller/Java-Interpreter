@@ -13,5 +13,16 @@ public class LoadCode extends ByteCode {
     }
 
     //add code for VM
+    @Override
+    public void execute(VirtualMachine vm) {
+        vm.load(offset);
+    }
+
+    public String toString() {
+        if(id.equals(""))
+            return "LOAD" + offset;
+        else
+            return "LOAD" + offset + " " + id;
+    }
 
 }

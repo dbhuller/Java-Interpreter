@@ -5,11 +5,29 @@ import interpreter.VirtualMachine;
 
 public class GoToCode extends ByteCode {
 	private String label;
-	int labelAddress;
+	private int address;
 
 	public void init(ArrayList<String> args) {
-		label = (String) args.get(0);
+		label = args.get(0);
 	}
 
-	//add other methods 
+	//add other methods
+	public void execute(VirtualMachine vm) {
+		vm.setProgramCounter(address);
+	}
+	public String getLabel() {
+		return label;
+	}
+
+	public void setAddr(int addrToBeSet) {
+		address = addrToBeSet;
+	}
+
+	public int getAddr() {
+		return address;
+	}
+
+	public String toString() {
+		return "GOTO" + label + " jump to address: " + address;
+	}
 }

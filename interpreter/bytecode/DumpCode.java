@@ -7,12 +7,15 @@ public class DumpCode extends ByteCode {
     private String label;
 
     @Override
-    public void init(ArrayList<String> args) { label = (String)args.get(0);
+    public void init(ArrayList<String> args) { label = args.get(0);
     }
 
     @Override
     public void execute(VirtualMachine vm) {
-    // add code
+    if(label.equals("ON"))
+        vm.setDump(true);
+    else if(label.equals("OFF"))
+        vm.setDump(false);
     }
 
     public String toString() {

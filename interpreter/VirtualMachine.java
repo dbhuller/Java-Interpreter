@@ -48,6 +48,10 @@ public class VirtualMachine {
         pc = x;
     }
 
+    public int getProgramCounter() {
+        return pc;
+    }
+
     public int peek(){
         return runStack.peek();
     }
@@ -80,7 +84,7 @@ public class VirtualMachine {
         returnAddrs.push(addrToBePushed);
     }
 
-    public int popReturnAddrs(int addrToBePopped) {
+    public int popReturnAddrs() {
         return (Integer)returnAddrs.pop();
     }
 

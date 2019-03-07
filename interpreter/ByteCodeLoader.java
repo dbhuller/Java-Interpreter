@@ -44,7 +44,7 @@ public class ByteCodeLoader extends Object {
                 key = tokenizer.nextToken();
                 value = CodeTable.getClassName(key);
 
-                code = (ByteCode)(Class.forName("interpreter.bytecode." + value).newInstance());
+                code = (ByteCode)(Class.forName("interpreter." + value).newInstance());
 
                 while(tokenizer.hasMoreTokens()) {
                     tokens.add(tokenizer.nextToken());

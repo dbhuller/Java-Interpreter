@@ -14,5 +14,13 @@ public class StoreCode extends ByteCode {
 		id = args.get(1);
 	}
 
-	//Add code for VM
+	@Override
+	public void execute(VirtualMachine vm) {
+		val = vm.peek();
+		vm.store(val);
+	}
+
+	public String toString() {
+		return "STORE" + offset + " " + id + " " + id + " = " + val;
+	}
 }

@@ -18,5 +18,16 @@ public class LitCode extends ByteCode {
 
     public void execute(VirtualMachine vm) {
         //add code for method
+        if("".equals(id))
+            vm.push(val);
+        else
+            vm.push(0);
+    }
+
+    public String toString() {
+        String stringOut = "LIT " + val + " " + id;
+        if(!id.equals(""))
+            stringOut = stringOut + "   int " + id;
+        return stringOut;
     }
 }
