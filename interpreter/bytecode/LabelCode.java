@@ -13,4 +13,12 @@ public class LabelCode extends ByteCode {
     public void execute(VirtualMachine vm) {
 
     }
+
+    public String getArgs() {
+        return label;
+    }
+
+    public String toString() {
+        return "LABEL" + label;
+    }
 }

@@ -6,7 +6,7 @@ import interpreter.bytecode.DumpCode;
 
 public class VirtualMachine {
 
-    protected RunTimeStack runStack;
+    private RunTimeStack runStack;
     private Stack returnAddrs;
     private Program program;
     private int pc;
@@ -15,6 +15,7 @@ public class VirtualMachine {
     //initial dump set to off (default)
     private String dumpMode = "OFF"; // use true
 
+    //Constructor
     protected VirtualMachine(Program program) {
 
         this.program = program;
@@ -22,7 +23,7 @@ public class VirtualMachine {
     }
 
     // method to execute program
-    // gets each bytecode from program and executes them according to each execute function
+    // gets each bytecode from program and executes them according to each bytecode execute function
     public void executeProgram() {
         pc = 0;
         runStack = new RunTimeStack();
@@ -40,7 +41,7 @@ public class VirtualMachine {
     }
 
     public int maxToPop() {
-        return runStack.madToPop();
+        return runStack.maxToPop();
     }
 
     public void setProgramCounter(int x) {
@@ -79,12 +80,16 @@ public class VirtualMachine {
         returnAddrs.push(addrToBePushed);
     }
 
-    public void popReturnAddrs(int addrToBePopped) {
+    public int popReturnAddrs(int addrToBePopped) {
         return (Integer)returnAddrs.pop();
     }
 
     public void setDump(boolean bool) {
-        dump = bool;
+        if (dumpMode.equals("ON")) {
+            bool = true;
+        } else {
+            bool = false;
+        }
     }
 
     public void exit() {

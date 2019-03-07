@@ -7,7 +7,7 @@ import interpreter.bytecode.*;
 public class Program {
 
     private ArrayList<ByteCode> program;
-    private HashMap<Stirng, Integer> programHM;
+    private HashMap<String, Integer> programHM;
 
     public Program() {
         program = new ArrayList<>();
@@ -26,7 +26,8 @@ public class Program {
     //function to identify if bytecode is LabelCode then store labelcode in hashmap
     public void addCode(ByteCode code) {
         if(code instanceof LabelCode) {
-            programHM.put(label.getArgs(). (program.size()));
+            LabelCode label = (LabelCode)code;
+            programHM.put(label.getArgs(), program.size());
         }
         program.add(code);
     }
@@ -40,14 +41,14 @@ public class Program {
      *
      * @param program Program object that holds a list of ByteCodes
      */
-    public void resolveAddrs() {
+    public void resolveAddrs(Program program) {
         int addrToJumpTo;
         int size= program.getSize();
         for(int i = 0; i < size; i++) {
             if(program.getCode(i) instanceof BranchCode) {
                 BranchCode branch = (BranchCode)program.getCode(i);
-                addrToJumpTo = (Integer)programHM.get(branch.getArgs()); //get matching addr
-                branch.setAddress(addrToJumpTo);
+                addrToJumpTo = (Integer)programHM.get(branch.getAddr()); //get matching addr
+                branch.setAddr(addrToJumpTo);
             }
         }
     }

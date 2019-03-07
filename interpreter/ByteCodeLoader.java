@@ -32,7 +32,7 @@ public class ByteCodeLoader extends Object {
      *      the newly created ByteCode instance via the init function.
      */
     public Program loadCodes() {
-        Program p;
+        Program p = new Program();
         String key, value;
         String nextLine;
         ByteCode code;
@@ -65,8 +65,8 @@ public class ByteCodeLoader extends Object {
         //resolve branching
         try {
             program.resolveAddrs(p);
-        } catch (Exception e) +{
-            SYstem.out.println("ResolveAddress error in bytecodeloader.java");
+        } catch (Exception e) {
+            System.out.println("ResolveAddress error in bytecodeloader.java");
         }
 
         return p;
