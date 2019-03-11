@@ -19,7 +19,7 @@ public class CodeTable {
         codeTable.put("HALT", "HaltCode");
         codeTable.put("POP", "PopCode");
         codeTable.put("FALSEBRANCH", "FalseBranchCode");
-        codeTable.put("GOTO", "GotoCode");
+        codeTable.put("GOTO", "GoToCode");
         codeTable.put("STORE", "StoreCode");
         codeTable.put("LOAD", "LoadCode");
         codeTable.put("LIT", "LitCode");
@@ -40,7 +40,7 @@ public class CodeTable {
      * @param key for byte code.
      * @return class name of desired byte code.
      */
-    public static String getClassName(String key){
+    public static String getCode(String key){
         
         return codeTable.get(key);
         

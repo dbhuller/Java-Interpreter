@@ -13,7 +13,7 @@ public class VirtualMachine {
     private boolean isRunning;
 
     //initial dump set to off (default)
-    private String dumpMode = "OFF"; // use true
+    private boolean dump; // use true
 
     //Constructor
     protected VirtualMachine(Program program) {
@@ -29,20 +29,23 @@ public class VirtualMachine {
         runStack = new RunTimeStack();
         returnAddrs = new Stack<Integer>();
         isRunning = true;
-
+        dump = false;
         while(isRunning) {
             ByteCode bytecode = program.getCode(pc);
             bytecode.execute(this);
-            if("ON".equals(dumpMode) && !(bytecode instanceof DumpCode)) {
+            if(this.dump && !(bytecode instanceof DumpCode)) {
+                System.out.println(bytecode.toString());
                 runStack.dump();
             }
             pc++;
         }
     }
 
+
     public int maxToPop() {
         return runStack.maxToPop();
     }
+
 
     public void setProgramCounter(int x) {
         pc = x;
@@ -89,11 +92,7 @@ public class VirtualMachine {
     }
 
     public void setDump(boolean bool) {
-        if (dumpMode.equals("ON")) {
-            bool = true;
-        } else {
-            bool = false;
-        }
+        dump = bool;
     }
 
     public void exit() {

@@ -3,6 +3,7 @@ package interpreter;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.Iterator;
+import java.util.Vector;
 
 
 // Class to hold the runtime stack and frame pointers
@@ -39,21 +40,21 @@ public class RunTimeStack {
                     System.out.println(",");
                 }
             }
-            if (i != 0)
+            //if (i != 0)
                 System.out.print("]");
             currentFrame = nextFrame;
         }
-        System.out.println("\n");
+        System.out.println();
     }
 
     // returns top of stack without removing item
     public int peek() {
-        return runTimeStack.get(runTimeStack.size() - 1);
+        return runTimeStack.size() - 1;
     }
 
     // remove the last item added (top) to runtimestack
     public int pop() {
-        int toBePopped = runTimeStack.get(this.size()-1);
+        int toBePopped = runTimeStack.size() -1;
         runTimeStack.remove(runTimeStack.size()-1);
         return toBePopped;
     }
@@ -61,13 +62,13 @@ public class RunTimeStack {
     // push function, add element to runtimestack
     public int push(int toBePushed) {
         runTimeStack.add(toBePushed);   //add item to be pushed to RTS
-        return this.peek();     //return top of RTS
+        return toBePushed;     //return top of RTS
     }
 
     // stores values into variables
     public int store(int offset) {
-        int valStored = runTimeStack.get(this.size()-1);
-        runTimeStack.remove(runTimeStack.size()-1);     //remove top of stack
+        int valStored = this.pop();
+        //runTimeStack.remove(runTimeStack.size()-1);     //remove top of stack
         runTimeStack.set(framePointer.peek() + offset, valStored);      //replace value at offset in the current frame
         return valStored;
     }
@@ -88,16 +89,17 @@ public class RunTimeStack {
 
     public Integer push(Integer val) {
         runTimeStack.add(val);
-        return this.peek();// try using 'this' if it doesnt work
+        //return this.peek();// try using 'this' if it doesnt work
+        return val;
     }
 
     public void popFrame() {
         int pop1 = this.peek();
         int pop2 = framePointer.pop();
         for(int i = runTimeStack.size() - 1; i >= pop2; i--) {
-            runTimeStack.remove(i);
+            this.pop();
         }
-        runTimeStack.add(pop1);
+        this.push(pop1);
     }
 
     public int size() {
@@ -106,8 +108,7 @@ public class RunTimeStack {
 
     /** Returns the size used by a function in the RTS. This function ensures the pop() wont pop more items than
      * needed, even if the arguments followed by the pop exceed the size of the function
-     * @return size
-     */
+    */
     public int maxToPop() {
         Iterator fpIterator = framePointer.iterator();  // framePointer Iterator
         int nextFrame = 0;
@@ -121,6 +122,7 @@ public class RunTimeStack {
         }
         return size;
     }
+
 
 
 

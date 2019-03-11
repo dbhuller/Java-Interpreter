@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>interpreter</OriginalElement>
+  <nodes>
+    <node x="1682.8094328703703" y="506.0">interpreter.bytecode.ReadCode</node>
+    <node x="954.3" y="357.0">interpreter.VirtualMachine</node>
+    <node x="599.0" y="506.0">interpreter.bytecode.CallCode</node>
+    <node x="1403.2222800925924" y="506.0">interpreter.Interpreter</node>
+    <node x="715.0" y="506.0">interpreter.bytecode.FalseBranchCode</node>
+    <node x="1247.7677662037036" y="248.0">interpreter.Program</node>
+    <node x="0.0" y="506.0">interpreter.bytecode.ReturnCode</node>
+    <node x="1560.8094328703703" y="506.0">interpreter.bytecode.LoadCode</node>
+    <node x="475.0" y="506.0">interpreter.bytecode.WriteCode</node>
+    <node x="367.0" y="506.0">interpreter.bytecode.LitCode</node>
+    <node x="717.2054398148143" y="149.0">interpreter.bytecode.BranchCode</node>
+    <node x="997.763946759259" y="248.0">interpreter.RunTimeStack</node>
+    <node x="1128.2054398148143" y="506.0">interpreter.bytecode.PopCode</node>
+    <node x="887.1249999999999" y="506.0">interpreter.bytecode.GoToCode</node>
+    <node x="1415.7166666666667" y="357.0">interpreter.ByteCodeLoader</node>
+    <node x="1805.8094328703703" y="506.0">interpreter.bytecode.StoreCode</node>
+    <node x="1104.263946759259" y="149.0">interpreter.bytecode.LabelCode</node>
+    <node x="1022.263946759259" y="0.0">interpreter.bytecode.ByteCode</node>
+    <node x="130.0" y="506.0">interpreter.bytecode.BopCode</node>
+    <node x="868.763946759259" y="248.0">interpreter.bytecode.DumpCode</node>
+    <node x="1511.2166666666667" y="248.0">interpreter.CodeTable</node>
+    <node x="1262.763946759259" y="506.0">interpreter.bytecode.HaltCode</node>
+    <node x="247.0" y="506.0">interpreter.bytecode.ArgsCode</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="interpreter.bytecode.DumpCode" target="interpreter.VirtualMachine">
+      <point x="27.0" y="14.5" />
+      <point x="949.763946759259" y="307.0" />
+      <point x="998.75" y="307.0" />
+      <point x="-19.049999999999955" y="-14.5" />
+    </edge>
+    <edge source="interpreter.Interpreter" target="interpreter.Program">
+      <point x="-8.666666666666686" y="-14.5" />
+      <point x="1446.5556134259257" y="446.0" />
+      <point x="1294.2677662037036" y="446.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.BopCode" target="interpreter.VirtualMachine">
+      <point x="24.25" y="-14.5" />
+      <point x="202.75" y="426.0" />
+      <point x="967.0" y="426.0" />
+      <point x="-50.799999999999955" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ArgsCode" target="interpreter.bytecode.ByteCode">
+      <point x="-25.0" y="-14.5" />
+      <point x="272.0" y="69.0" />
+      <point x="1036.013946759259" y="69.0" />
+      <point x="-35.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.PopCode" target="interpreter.bytecode.ByteCode">
+      <point x="24.0" y="-14.5" />
+      <point x="1200.2054398148143" y="486.0" />
+      <point x="1218.763946759259" y="486.0" />
+      <point x="1218.763946759259" y="119.0" />
+      <point x="1080.013946759259" y="119.0" />
+      <point x="8.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LitCode" target="interpreter.VirtualMachine">
+      <point x="22.0" y="-14.5" />
+      <point x="433.0" y="446.0" />
+      <point x="983.9333333333332" y="446.0" />
+      <point x="-33.866666666666674" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.HaltCode" target="interpreter.bytecode.ByteCode">
+      <point x="24.5" y="-14.5" />
+      <point x="1336.263946759259" y="486.0" />
+      <point x="1351.2677662037036" y="486.0" />
+      <point x="1351.2677662037036" y="89.0" />
+      <point x="1096.513946759259" y="89.0" />
+      <point x="24.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ReturnCode" target="interpreter.VirtualMachine">
+      <point x="27.5" y="-14.5" />
+      <point x="82.5" y="416.0" />
+      <point x="958.5333333333333" y="416.0" />
+      <point x="-59.26666666666665" y="14.5" />
+    </edge>
+    <edge source="interpreter.VirtualMachine" target="interpreter.bytecode.DumpCode">
+      <point x="-31.75" y="-14.5" />
+      <point x="986.05" y="317.0" />
+      <point x="895.763946759259" y="317.0" />
+      <point x="-27.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LitCode" target="interpreter.bytecode.ByteCode">
+      <point x="-22.0" y="-14.5" />
+      <point x="389.0" y="79.0" />
+      <point x="1041.513946759259" y="79.0" />
+      <point x="-30.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.BranchCode" target="interpreter.bytecode.ByteCode">
+      <point x="0.0" y="-14.5" />
+      <point x="773.2054398148143" y="99.0" />
+      <point x="1052.513946759259" y="99.0" />
+      <point x="-19.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.DumpCode" target="interpreter.bytecode.ByteCode">
+      <point x="0.0" y="-14.5" />
+      <point x="922.763946759259" y="119.0" />
+      <point x="1063.513946759259" y="119.0" />
+      <point x="-8.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.VirtualMachine" target="interpreter.Program">
+      <point x="44.450000000000045" y="-14.5" />
+      <point x="1062.25" y="327.0" />
+      <point x="1257.0677662037037" y="327.0" />
+      <point x="-37.19999999999999" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ArgsCode" target="interpreter.VirtualMachine">
+      <point x="25.0" y="-14.5" />
+      <point x="322.0" y="436.0" />
+      <point x="975.4666666666665" y="436.0" />
+      <point x="-42.33333333333337" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.CallCode" target="interpreter.VirtualMachine">
+      <point x="24.0" y="-14.5" />
+      <point x="671.0" y="466.0" />
+      <point x="1000.8666666666666" y="466.0" />
+      <point x="-16.93333333333328" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.FalseBranchCode" target="interpreter.bytecode.BranchCode">
+      <point x="-34.5" y="-14.5" />
+      <point x="749.5" y="228.0" />
+      <point x="750.8054398148142" y="228.0" />
+      <point x="-22.40000000000009" y="14.5" />
+    </edge>
+    <edge source="interpreter.Interpreter" target="interpreter.ByteCodeLoader">
+      <point x="8.666666666666657" y="-14.5" />
+      <point x="1463.888946759259" y="436.0" />
+      <point x="1449.7166666666667" y="436.0" />
+      <point x="-34.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.StoreCode" target="interpreter.VirtualMachine">
+      <point x="-26.0" y="-14.5" />
+      <point x="1831.8094328703703" y="406.0" />
+      <point x="1077.0666666666666" y="406.0" />
+      <point x="59.26666666666665" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ReadCode" target="interpreter.VirtualMachine">
+      <point x="-25.75" y="-14.5" />
+      <point x="1708.5594328703703" y="416.0" />
+      <point x="1068.6" y="416.0" />
+      <point x="50.799999999999955" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LabelCode" target="interpreter.bytecode.ByteCode">
+      <point x="0.0" y="-14.5" />
+      <point x="1156.263946759259" y="129.0" />
+      <point x="1074.513946759259" y="129.0" />
+      <point x="2.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ReadCode" target="interpreter.bytecode.ByteCode">
+      <point x="25.75" y="-14.5" />
+      <point x="1760.0594328703703" y="59.0" />
+      <point x="1113.013946759259" y="59.0" />
+      <point x="41.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.GoToCode" target="interpreter.bytecode.BranchCode">
+      <point x="-26.0" y="-14.5" />
+      <point x="913.1249999999999" y="406.0" />
+      <point x="791.763946759259" y="406.0" />
+      <point x="791.763946759259" y="228.0" />
+      <point x="773.2054398148143" y="228.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.StoreCode" target="interpreter.bytecode.ByteCode">
+      <point x="26.0" y="-14.5" />
+      <point x="1883.8094328703703" y="49.0" />
+      <point x="1118.513946759259" y="49.0" />
+      <point x="46.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.Program" target="interpreter.bytecode.BranchCode">
+      <point x="-34.875" y="-14.5" />
+      <point x="1259.3927662037036" y="208.0" />
+      <point x="818.0054398148143" y="208.0" />
+      <point x="44.799999999999955" y="14.5" />
+    </edge>
+    <edge source="interpreter.ByteCodeLoader" target="interpreter.Program">
+      <point x="-17.0" y="-14.5" />
+      <point x="1466.7166666666667" y="327.0" />
+      <point x="1331.4677662037036" y="327.0" />
+      <point x="37.19999999999999" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LabelCode" target="interpreter.VirtualMachine">
+      <point x="-26.0" y="14.5" />
+      <point x="1130.263946759259" y="317.0" />
+      <point x="1049.55" y="317.0" />
+      <point x="31.75" y="-14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.BranchCode" target="interpreter.VirtualMachine">
+      <point x="22.40000000000009" y="14.5" />
+      <point x="795.6054398148144" y="218.0" />
+      <point x="827.9389467592591" y="218.0" />
+      <point x="827.9389467592591" y="337.0" />
+      <point x="960.6499999999999" y="337.0" />
+      <point x="-57.14999999999998" y="-14.5" />
+    </edge>
+    <edge source="interpreter.Interpreter" target="interpreter.VirtualMachine">
+      <point x="-43.333333333333314" y="-14.5" />
+      <point x="1411.8889467592592" y="466.0" />
+      <point x="1043.2" y="466.0" />
+      <point x="25.40000000000009" y="14.5" />
+    </edge>
+    <edge source="interpreter.VirtualMachine" target="interpreter.bytecode.ByteCode">
+      <point x="-44.450000000000045" y="-14.5" />
+      <point x="973.3499999999999" y="327.0" />
+      <point x="858.263946759259" y="327.0" />
+      <point x="858.263946759259" y="109.0" />
+      <point x="1058.013946759259" y="109.0" />
+      <point x="-13.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ReturnCode" target="interpreter.bytecode.ByteCode">
+      <point x="-27.5" y="-14.5" />
+      <point x="27.5" y="49.0" />
+      <point x="1025.013946759259" y="49.0" />
+      <point x="-46.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.PopCode" target="interpreter.VirtualMachine">
+      <point x="-24.0" y="-14.5" />
+      <point x="1152.2054398148143" y="486.0" />
+      <point x="1026.2666666666667" y="486.0" />
+      <point x="8.466666666666697" y="14.5" />
+    </edge>
+    <edge source="interpreter.Interpreter" target="interpreter.CodeTable">
+      <point x="43.33333333333326" y="-14.5" />
+      <point x="1498.5556134259257" y="486.0" />
+      <point x="1589.9666666666667" y="486.0" />
+      <point x="26.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.HaltCode" target="interpreter.VirtualMachine">
+      <point x="-24.5" y="-14.5" />
+      <point x="1287.263946759259" y="476.0" />
+      <point x="1034.7333333333333" y="476.0" />
+      <point x="16.933333333333394" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.FalseBranchCode" target="interpreter.VirtualMachine">
+      <point x="34.5" y="-14.5" />
+      <point x="818.5" y="476.0" />
+      <point x="1009.3333333333333" y="476.0" />
+      <point x="-8.466666666666697" y="14.5" />
+    </edge>
+    <edge source="interpreter.VirtualMachine" target="interpreter.RunTimeStack">
+      <point x="6.350000000000023" y="-14.5" />
+      <point x="1024.1499999999999" y="337.0" />
+      <point x="1028.263946759259" y="337.0" />
+      <point x="-30.5" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.BopCode" target="interpreter.bytecode.ByteCode">
+      <point x="-24.25" y="-14.5" />
+      <point x="154.25" y="59.0" />
+      <point x="1030.513946759259" y="59.0" />
+      <point x="-41.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.Program" target="interpreter.bytecode.ByteCode">
+      <point x="11.625" y="-14.5" />
+      <point x="1305.8927662037036" y="228.0" />
+      <point x="1312.0177662037036" y="228.0" />
+      <point x="1312.0177662037036" y="109.0" />
+      <point x="1085.513946759259" y="109.0" />
+      <point x="13.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LoadCode" target="interpreter.VirtualMachine">
+      <point x="-25.5" y="-14.5" />
+      <point x="1586.3094328703703" y="426.0" />
+      <point x="1060.1333333333332" y="426.0" />
+      <point x="42.33333333333326" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.ByteCode" target="interpreter.VirtualMachine">
+      <point x="-2.75" y="14.5" />
+      <point x="1069.013946759259" y="129.0" />
+      <point x="987.263946759259" y="129.0" />
+      <point x="987.263946759259" y="297.0" />
+      <point x="1011.4499999999998" y="297.0" />
+      <point x="-6.350000000000023" y="-14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.GoToCode" target="interpreter.VirtualMachine">
+      <point x="26.0" y="-14.5" />
+      <point x="965.1249999999999" y="486.0" />
+      <point x="1017.8" y="486.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.WriteCode" target="interpreter.VirtualMachine">
+      <point x="26.0" y="-14.5" />
+      <point x="553.0" y="456.0" />
+      <point x="992.3999999999999" y="456.0" />
+      <point x="-25.399999999999977" y="14.5" />
+    </edge>
+    <edge source="interpreter.Program" target="interpreter.bytecode.LabelCode">
+      <point x="-11.625" y="-14.5" />
+      <point x="1282.6427662037036" y="198.0" />
+      <point x="1182.263946759259" y="198.0" />
+      <point x="26.0" y="14.5" />
+    </edge>
+    <edge source="interpreter.ByteCodeLoader" target="interpreter.CodeTable">
+      <point x="51.0" y="-14.5" />
+      <point x="1534.7166666666667" y="337.0" />
+      <point x="1537.4666666666667" y="337.0" />
+      <point x="-26.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.ByteCodeLoader" target="interpreter.bytecode.ByteCode">
+      <point x="17.0" y="-14.5" />
+      <point x="1500.7166666666667" y="79.0" />
+      <point x="1102.013946759259" y="79.0" />
+      <point x="30.25" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.WriteCode" target="interpreter.bytecode.ByteCode">
+      <point x="-26.0" y="-14.5" />
+      <point x="501.0" y="89.0" />
+      <point x="1047.013946759259" y="89.0" />
+      <point x="-24.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.LoadCode" target="interpreter.bytecode.ByteCode">
+      <point x="25.5" y="-14.5" />
+      <point x="1637.3094328703703" y="69.0" />
+      <point x="1107.513946759259" y="69.0" />
+      <point x="35.75" y="14.5" />
+    </edge>
+    <edge source="interpreter.bytecode.CallCode" target="interpreter.bytecode.BranchCode">
+      <point x="-24.0" y="-14.5" />
+      <point x="623.0" y="228.0" />
+      <point x="728.4054398148144" y="228.0" />
+      <point x="-44.799999999999955" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="726.0" y="304.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

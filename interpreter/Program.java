@@ -39,21 +39,20 @@ public class Program {
      * correct addresses so the VirtualMachine knows what to set the Program Counter(PC)
      * HINT: make note what type of data-stucture bytecodes are stored in.
      *
-     * @param program Program object that holds a list of ByteCodes
+     *  Program object that holds a list of ByteCodes
      */
-    public void resolveAddrs(Program program) {
-        int addrToJumpTo;
-        int size= program.getSize();
-        for(int i = 0; i < size; i++) {
-            if(program.getCode(i) instanceof BranchCode) {
-                BranchCode branch = (BranchCode)program.getCode(i);
-                addrToJumpTo = (Integer)programHM.get(branch.getAddr()); //get matching addr
-                branch.setAddr(addrToJumpTo);
+    public void resolveAddrs() {
+        Integer addrToJumpTo;
+        for(int i = 0; i < program.size(); i++) {
+            if(program.get(i) instanceof BranchCode) {
+                BranchCode branch = (BranchCode)program.get(i);
+                addrToJumpTo = new Integer(programHM.get(branch.getLabel()));
+                branch.setAddr(addrToJumpTo.intValue());
             }
         }
     }
 
-
-
-
+    public ArrayList<ByteCode> getProgram() {
+        return program;
+    }
 }

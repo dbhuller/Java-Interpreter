@@ -3,7 +3,7 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
-public class GoToCode extends ByteCode {
+public class GoToCode extends BranchCode {
 	private String label;
 	private int address;
 
