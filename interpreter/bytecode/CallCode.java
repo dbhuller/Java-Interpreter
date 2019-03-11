@@ -3,6 +3,10 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * CALL <funcname> - transfer control to the indicated function
+ */
+
 public class CallCode extends BranchCode {
     private String label;
     private int address;

@@ -8,6 +8,11 @@ package interpreter;
 
 import java.util.HashMap;
 
+/*
+* Holds and initializes the Hashtable that ByteCodeLoader uses to create
+        * instances of the bytecode classes
+        */
+
 public class CodeTable {
     
     private static HashMap<String,String> codeTable;

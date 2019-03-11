@@ -3,6 +3,12 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * RETURN <funcname>; Return from the current function; <funcname> is used as
+ * a comment to indicate the current function
+ * RETURN is generated for intrinsic functions
+ */
+
 public class ReturnCode extends ByteCode {
     private String label;
     private int returnValue;

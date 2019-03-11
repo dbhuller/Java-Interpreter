@@ -10,7 +10,13 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 import interpreter.bytecode.*;
-
+/***
+ *
+ This is the class that will be in charge of loading the code from the
+ * source file. It also has a method that loads bytecode objects into an
+         * instance of the program class. This is done with the help of a
+        * Hashtable that matches the bytecode to their equivalent classname.
+        */
 
 public class ByteCodeLoader extends Object {
 

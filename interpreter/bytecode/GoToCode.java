@@ -3,6 +3,10 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * GOTO <label>
+ */
+
 public class GoToCode extends BranchCode {
 	private String label;
 	private int address;

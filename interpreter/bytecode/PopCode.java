@@ -3,6 +3,10 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * POP n; Pop top n levels of runtime stack
+ */
+
 public class PopCode extends ByteCode {
     protected int level2Pop;
 

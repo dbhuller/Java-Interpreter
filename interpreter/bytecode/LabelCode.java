@@ -3,6 +3,10 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * LABEL <label>; target for branches; (see FALSEBRANCH, GOTO)
+ */
+
 public class LabelCode extends ByteCode {
     private String label;
 

@@ -4,6 +4,11 @@ import interpreter.VirtualMachine;
 
 import java.util.ArrayList;
 
+/**
+ * FALSEBRANCH <label> - pop the top of the stack; if it's false (i.e. 0) then
+ * branch to <label> else execute the next bytecode
+ */
+
 public class FalseBranchCode extends BranchCode {
 	private String label;
 	private int address;

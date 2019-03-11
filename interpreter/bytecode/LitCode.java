@@ -3,6 +3,12 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * LIT n - load the literal value n
+ * LIT 0 i - this form of the Lit was generated to load 0 on the stack in order
+ * to initialize the variable i to 0 and reserve space on the runtime stack for i
+ */
+
 public class LitCode extends ByteCode {
     protected int val;
     protected String id;

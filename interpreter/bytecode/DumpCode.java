@@ -3,6 +3,10 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * DUMP ON/OFF - sets the dump flag in the virtual machine to true/false respectively
+ */
+
 public class DumpCode extends ByteCode {
     private String label;
 

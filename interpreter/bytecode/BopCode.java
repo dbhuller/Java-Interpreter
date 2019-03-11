@@ -3,6 +3,13 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * bop <binary op> - pop top 2 levels of the stack and perform indicated
+ * operation - operations are + - / * == != <= > >= < | &
+ * | and & are logical operators, not bit operators lower level is the first
+ * operand: e.g. <second-level> + <top-level>
+ */
+
 public class BopCode extends ByteCode {
     private String operator;
 

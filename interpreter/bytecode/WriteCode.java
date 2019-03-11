@@ -3,6 +3,11 @@ package interpreter.bytecode;
 import java.util.ArrayList;
 import interpreter.VirtualMachine;
 
+/**
+ * WRITE; Write the value on top of the stack to output; leave the value on top
+ * of the stack
+ */
+
 public class WriteCode extends ByteCode {
     public void init(ArrayList<String> args) {
     //DOES NOTHING

@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import interpreter.bytecode.*;
 
+/***
+ * Holds the bytecode objects and has a method to resolve addresses for branch
+ * instructions.
+ */
+
 public class Program {
 
     private ArrayList<ByteCode> program;
